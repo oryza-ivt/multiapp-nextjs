@@ -2,8 +2,9 @@
 // const nextConfig = {};
 
 const nextConfig = {
-    // basePath: '/transfer',
-    // assetPrefix: '/transfer',
+    basePath: '/transfer',
+    assetPrefix: '/transfer',
+    output: 'standalone'
   };
 
 export default nextConfig;

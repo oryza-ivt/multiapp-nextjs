@@ -16,7 +16,7 @@ export default function TransferListComponent() {
       try {
         // const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:2222/api/transaction";
         // const res = await fetch(`${apiUrl}?prefix=trf`);
-        const res = await fetch(`http://localhost:3000/api/transaction?prefix=trf`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_TRANSACTION_APP_BASE_URL}/api/transaction?prefix=trf`);
         const data = await res.json();
         setTransfers(data);
       } catch (error) {
@@ -35,7 +35,7 @@ export default function TransferListComponent() {
           <li key={item.key}>
             <strong>{item.key}</strong>: {item.value}
             <button
-              onClick={() => router.push(`/transaction/${item.key}`)}
+              onClick={() => router.push(`${process.env.NEXT_PUBLIC_TRANSACTION_APP_BASE_URL}/transaction/${item.key}`)}
               style={{ marginLeft: "10px" }}
             >
               View

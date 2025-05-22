@@ -3,7 +3,7 @@ import TransferListComponent from '@/components/TransferListComponent'
 export default function TransferPage() {
   return (
     <div>
-      <h1>Transfer</h1>
+      <h1>Transfer - [/app/transfer/page]</h1>
       <TransferListComponent />
     </div>
   )

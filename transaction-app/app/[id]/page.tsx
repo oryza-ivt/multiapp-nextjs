@@ -8,7 +8,7 @@ export default function TransactionDetailPage() {
 
   return (
     <div>
-      <h1>Detail for {id} - [/app/transaction/id]</h1>
+      <h1>Detail for {id} - [/app/id]</h1>
       <TransactionDetailComponent id={id} />
     </div>
   );

@@ -1,16 +1,15 @@
-'use client';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+"use client";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function TransactionListComponent() {
   const [items, setItems] = useState([]);
   const router = useRouter();
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
   useEffect(() => {
-    // const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:1111/api/transaction";
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "/api/transaction";
-    fetch(`${apiUrl}`)
-      .then(res => res.json())
+    fetch(`${basePath}/api/transaction`)
+      .then((res) => res.json())
       .then(setItems);
   }, []);
 
@@ -19,7 +18,9 @@ export default function TransactionListComponent() {
       {items.map((item: any) => (
         <li key={item.key}>
           <strong>{item.key}</strong>: {item.value}
-          <button onClick={() => router.push(`/transaction/${item.key}`)}>View</button>
+          <button onClick={() => router.push(`${basePath}/${item.key}`)}>
+            View
+          </button>
         </li>
       ))}
     </ul>

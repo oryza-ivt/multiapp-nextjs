@@ -1,12 +1,10 @@
-'use client'
-import { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import TransferListComponent from '@/components/TransferListComponent'
 
-export default function Home() {
-  const router = useRouter()
-  useEffect(() => {
-    router.push('/transfer')
-  }, [router])
-
-  return <p>Redirecting to /transfer...</p>
+export default function TransferPage() {
+  return (
+    <div>
+      <h1>Transfer - [/app/page]</h1>
+      <TransferListComponent />
+    </div>
+  )
 }
